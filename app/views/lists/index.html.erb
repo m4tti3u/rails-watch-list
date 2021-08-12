@@ -1,0 +1,33 @@
+<div class="navbar-lewagon">
+  <img id="logo" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fworldvectorlogo.com%2Ffr%2Flogo%2Fpopcorn&psig=AOvVaw1Q5SyB9eBpmb2e1xi-eKxw&ust=1628861514194000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMiN0JHMq_ICFQAAAAAdAAAAABAD" alt="">
+</div>
+
+<div class="container">
+<div class="banner">
+  <h1 class="mt-5 text-center">My WatchList</h1>
+  <p class="text-center">Magnifique petite liste de films par catégories</p>
+</div>
+
+
+
+<div class="row justify-content-center">
+
+  <% @lists.each do |list| %>
+  <div class="card mt-4 ml-4" style="width: 400px;">
+  <img src="https://source.unsplash.com/user/erondu/400x200" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%= link_to 'Watch Movies', list_path(list), {:class => "btn btn-primary"}%>
+  </div>
+
+  </div>
+  <% end %>
+
+</div>
+
+
+
+<%= link_to 'Create a new list', new_list_path, {:class => "btn btn-primary"}%>
+
+</div>
